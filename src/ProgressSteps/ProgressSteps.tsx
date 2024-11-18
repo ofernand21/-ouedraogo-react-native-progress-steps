@@ -9,6 +9,19 @@ interface ProgressStepsProps {
   topOffset?: number;
   marginBottom?: number;
   children: ReactElement[];
+  activeStepIconBorderColor?: string;
+  activeLabelColor?: string;
+  activeStepNumColor?: string;
+  activeStepIconColor?: string;
+  completedStepIconColor?: string;
+  completedProgressBarColor?: string;
+  completedCheckColor?: string;
+  progressBarColor?: string;
+  disabledStepIconColor?: string;
+  labelColor?: string;
+  completedLabelColor?: string;
+  completedStepNumColor?: string;
+  disabledStepNumColor?: string;
 }
 
 const ProgressSteps: React.FC<ProgressStepsProps> = ({
@@ -17,6 +30,19 @@ const ProgressSteps: React.FC<ProgressStepsProps> = ({
   topOffset = 30,
   marginBottom = 50,
   children,
+  activeStepIconBorderColor = undefined,
+  activeLabelColor = undefined,
+  activeStepNumColor = undefined,
+  activeStepIconColor = undefined,
+  completedStepIconColor = undefined,
+  completedProgressBarColor = undefined,
+  completedCheckColor = undefined,
+  progressBarColor = undefined,
+  disabledStepIconColor = undefined,
+  labelColor = undefined,
+  completedLabelColor = undefined,
+  completedStepNumColor = undefined,
+  disabledStepNumColor = undefined,
 }) => {
   const [stepCount, setStepCount] = useState(0);
   const [currentStep, setCurrentStep] = useState(activeStep);
@@ -43,6 +69,19 @@ const ProgressSteps: React.FC<ProgressStepsProps> = ({
             isLastStep={i === stepCount - 1}
             isCompletedStep={isCompletedStep}
             isActiveStep={isActiveStep}
+            activeStepIconBorderColor={activeStepIconBorderColor}
+            activeLabelColor={activeLabelColor}
+            activeStepNumColor={activeStepNumColor}
+            activeStepIconColor={activeStepIconColor}
+            completedStepIconColor={completedStepIconColor}
+            completedProgressBarColor={completedProgressBarColor}
+            completedCheckColor={completedCheckColor}
+            progressBarColor={progressBarColor}
+            disabledStepIconColor={disabledStepIconColor}
+            labelColor={labelColor}
+            completedLabelColor={completedLabelColor}
+            completedStepNumColor={completedStepNumColor}
+            disabledStepNumColor={disabledStepNumColor}
           />
         </View>
       );
