@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, TouchableOpacity, Text, ViewStyle, ScrollViewProps, TextStyle } from 'react-native';
+import { ScrollView, ScrollViewProps, Text, TextStyle, TouchableOpacity, View, ViewStyle } from 'react-native';
 import ProgressButtons from './ProgressButtons';
 
 interface ProgressStepProps {
@@ -67,13 +67,17 @@ const ProgressStep: React.FC<ProgressStepProps> = ({
   const renderNextButton = () => {
     const btnStyle = {
       textAlign: 'center',
-      padding: 8,
+      padding: 12,
+      borderRadius: 6,
+      minWidth: 80,
       ...nextBtnStyle,
     };
 
     const btnTextStyle: TextStyle = {
       color: '#007AFF',
-      fontSize: 18,
+      fontSize: 16,
+      fontWeight: '600',
+      textAlign: 'center',
       ...nextBtnTextStyle,
     };
 
@@ -89,6 +93,7 @@ const ProgressStep: React.FC<ProgressStepProps> = ({
         style={btnStyle}
         onPress={activeStep === stepCount - 1 ? handleSubmit : handleNextStep}
         disabled={nextBtnDisabled}
+        activeOpacity={0.7}
       >
         <Text style={textStyle}>
           {activeStep === stepCount - 1 ? finishBtnText : nextBtnText}
@@ -100,13 +105,17 @@ const ProgressStep: React.FC<ProgressStepProps> = ({
   const renderPreviousButton = () => {
     const btnStyle = {
       textAlign: 'center',
-      padding: 8,
+      padding: 12,
+      borderRadius: 6,
+      minWidth: 80,
       ...previousBtnStyle,
     };
 
     const btnTextStyle: TextStyle = {
       color: '#007AFF',
-      fontSize: 18,
+      fontSize: 16,
+      fontWeight: '600',
+      textAlign: 'center',
       ...previousBtnTextStyle,
     };
 
@@ -122,6 +131,7 @@ const ProgressStep: React.FC<ProgressStepProps> = ({
         style={btnStyle}
         onPress={handlePreviousStep}
         disabled={previousBtnDisabled}
+        activeOpacity={0.7}
       >
         <Text style={textStyle}>{activeStep === 0 ? '' : previousBtnText}</Text>
       </TouchableOpacity>

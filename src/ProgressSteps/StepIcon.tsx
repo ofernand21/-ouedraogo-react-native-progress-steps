@@ -86,19 +86,21 @@ const StepIcon: React.FC<StepIconProps> = ({
           borderColor: activeStepIconBorderColor,
           borderWidth: 5,
           bottom: 2,
+          justifyContent: 'center',  // AMÉLIORATION
+          alignItems: 'center',      // AMÉLIORATION
         },
         circleText: {
           alignSelf: 'center',
-          top: 20 / 3,
         },
         labelText: {
           textAlign: 'center',
           flexWrap: 'wrap',
           width: 100,
-          paddingTop: 4,
+          paddingTop: 6,  // AMÉLIORATION (était 4)
           fontFamily: labelFontFamily,
           color: activeLabelColor,
           fontSize: activeLabelFontSize || labelFontSize,
+          fontWeight: '600',  // AMÉLIORATION
         },
         leftBar: {
           position: 'absolute',
@@ -122,6 +124,8 @@ const StepIcon: React.FC<StepIconProps> = ({
         },
         stepNum: {
           color: activeStepNumColor,
+          fontSize: 16,       // AMÉLIORATION
+          fontWeight: 'bold', // AMÉLIORATION
         },
       });
     } else if (isCompletedStep) {
@@ -131,19 +135,19 @@ const StepIcon: React.FC<StepIconProps> = ({
           height: 36,
           borderRadius: 18,
           backgroundColor: completedStepIconColor,
+          justifyContent: 'center',  // AMÉLIORATION
+          alignItems: 'center',      // AMÉLIORATION
         },
         circleText: {
           alignSelf: 'center',
-          top: 18 / 2,
         },
         labelText: {
           textAlign: 'center',
           flexWrap: 'wrap',
           width: 100,
-          paddingTop: 4,
+          paddingTop: 6,  // AMÉLIORATION (était 4)
           fontFamily: labelFontFamily,
           color: completedLabelColor,
-          marginTop: 4,
           fontSize: labelFontSize,
         },
         leftBar: {
@@ -168,6 +172,7 @@ const StepIcon: React.FC<StepIconProps> = ({
         },
         stepNum: {
           color: completedStepNumColor,
+          fontSize: 16,  // AMÉLIORATION
         },
       });
     } else {
@@ -177,19 +182,19 @@ const StepIcon: React.FC<StepIconProps> = ({
           height: 36,
           borderRadius: 18,
           backgroundColor: disabledStepIconColor,
+          justifyContent: 'center',  // AMÉLIORATION
+          alignItems: 'center',      // AMÉLIORATION
         },
         circleText: {
           alignSelf: 'center',
-          top: 18 / 2,
         },
         labelText: {
           textAlign: 'center',
           flexWrap: 'wrap',
           width: 100,
-          paddingTop: 4,
+          paddingTop: 6,  // AMÉLIORATION (était 4)
           fontFamily: labelFontFamily,
           color: labelColor,
-          marginTop: 4,
           fontSize: labelFontSize,
         },
         leftBar: {
@@ -214,6 +219,7 @@ const StepIcon: React.FC<StepIconProps> = ({
         },
         stepNum: {
           color: disabledStepNumColor,
+          fontSize: 16,  // AMÉLIORATION
         },
       });
     }
@@ -226,7 +232,7 @@ const StepIcon: React.FC<StepIconProps> = ({
       <View style={styles.circleStyle}>
         <Text style={styles.circleText}>
           {isCompletedStep ? (
-            <Text style={{ color: completedCheckColor }}>&#10003;</Text>
+            <Text style={{ color: completedCheckColor, fontSize: 18, fontWeight: 'bold' }}>✓</Text>
           ) : (
             <Text style={styles.stepNum}>{stepNum}</Text>
           )}

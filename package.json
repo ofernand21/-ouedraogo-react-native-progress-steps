@@ -1,6 +1,6 @@
 {
   "name": "react-native-progress-stepper",
-  "version": "1.0.4",
+  "version": "1.2.0",
   "description": "A TypeScript-based, fully customizable React Native component for implementing a streamlined progress stepper UI, adhering to modern React Native standards.",
   "main": "index.d.ts",
   "scripts": {
@@ -42,6 +42,6 @@
     "typescript": "^5.5.3"
   },
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.21"
   }
 }

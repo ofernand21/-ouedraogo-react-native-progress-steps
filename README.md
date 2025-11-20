@@ -4,39 +4,38 @@
 
 # react-native-progress-stepper
 
-A simple and fully customizable React Native component that implements a progress stepper UI. 
-* Each steps content is displayed inside of a customizable ScrollView. 
-* Fully customizable buttons are displayed at the bottom of the component to move between steps.
+A simple and fully customizable React Native component that implements a progress stepper UI.
 
+* Each steps content is displayed inside of a customizable ScrollView.
+* Fully customizable buttons are displayed at the bottom of the component to move between steps.
 
 Example One             |  Example Two
 :-------------------------:|:-------------------------:
 ![](assets/react-native-progress-steps_1.gif) [examples/ExampleOne.js](examples/ExampleOne.js)| ![](assets/react-native-progress-steps_2.gif) [examples/ExampleTwo.js](examples/ExampleTwo.js)
 
-
 ## Installation
 
 If using yarn:
 
-```
+```bash
 yarn add react-native-progress-stepper
 ```
 
 If using npm:
 
-```
+```bash
 npm i react-native-progress-stepper
 ```
 
 ## Usage
 
-```
+```ts
 import { ProgressSteps, ProgressStep } from 'react-native-progress-stepper';
 ```
 
 Simply place a `<ProgressStep />` tag for each desired step within the `<ProgressSteps />` wrapper.
 
-```
+```ts
 <View style={{flex: 1}}>
     <ProgressSteps>
         <ProgressStep label="First Step">
@@ -59,11 +58,12 @@ Simply place a `<ProgressStep />` tag for each desired step within the `<Progres
 ```
 
 ### Button Styling Usage
+
 Button container and text are fully customizable using the `nextBtnStyle, nextBtnTextStyle, previousBtnStyle, and previousBtnTextStyle` props.
 
-Example usage to change a buttons text color: 
+Example usage to change a buttons text color:
 
-```
+```ts
 const buttonTextStyle = {
     color: '#393939'
 };
@@ -282,11 +282,12 @@ export default ExampleTwo;
 ```
 
 ### Current Step Error and Validation Handling
+
 The `errors` prop should be used if there's a need for validation and error handling when clicking the next button. If you would like to prevent the next step from being rendered, set the `errors` prop to `true`. By default, it will be `false`.
 
 Example usage of validation check:
 
-```
+```ts
 const [isValid, setIsValid] = useState(false);
 const [errors, setErrors] = useState(false);
 
@@ -319,6 +320,7 @@ return (
 ## Documentation
 
 ### Progress Steps Component
+
 | Name                      | Description                              | Default     | Type    |
 |---------------------------|------------------------------------------|-------------|---------|
 | borderWidth               | Width of the progress bar between steps  | 6           | Number  |
@@ -345,6 +347,7 @@ return (
 | marginBottom              | Set progress bar bottom margin           | 50          | Number  |
 
 ### Progress Step Component
+
 | Name | Description | Default | Type |
 |------------------|--------------------------------------------------------------------------|----------|---------|
 | label | Title of the current step to be displayed | null | String |
@@ -367,12 +370,15 @@ return (
 | removeBtnRow | Used to render the progress step without the button row | false | Boolean |
 
 ## Contributing
+
 Pull requests are always welcome! Feel free to open a new GitHub issue for any changes that can be made.
 
 **Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
 
 ## Author
+
 Fernand Ouedraogo | [my linkedin](https://www.linkedin.com/in/fernand-ouedraogo-0aa130251/)
 
 ## License
+
 [MIT](./LICENSE)
